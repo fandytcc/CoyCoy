@@ -1,9 +1,9 @@
 FactoryBot.define do
   factory :list_item do
-    quantity 1
+    quantity rand(1..10)
     purchased false
     total_price "9.99"
-    cart nil
-    product nil
+    cart { build(:cart) }
+    product {build(:product)}
   end
 end

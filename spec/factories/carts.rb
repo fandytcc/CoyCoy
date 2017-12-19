@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :cart do
-    user nil
-    total "9.99"
+    user {build(:user)}
+    total "99.99"
   end
 end
