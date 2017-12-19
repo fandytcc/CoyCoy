@@ -23,14 +23,6 @@ ActiveRecord::Schema.define(version: 20171219131802) do
     t.index ["user_id"], name: "index_carts_on_user_id"
   end
 
-  create_table "profiles", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_profiles_on_user_id"
-
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.decimal "price"
@@ -38,6 +30,15 @@ ActiveRecord::Schema.define(version: 20171219131802) do
     t.string "brand"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "profiles", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
