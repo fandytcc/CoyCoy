@@ -1,6 +1,6 @@
 class Product < ApplicationRecord
   has_many :list_items, dependent: :destroy
-  has_many :carted_products, through: :list_items, source: :cart
+  has_many :product_carts, through: :list_items, source: :cart
 
   validates :name, presence: true
   validates :price, presence: true
