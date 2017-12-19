@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20171219143134) do
     t.index ["cart_id"], name: "index_list_items_on_cart_id"
     t.index ["product_id"], name: "index_list_items_on_product_id"
   end
-  
+
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.decimal "price"

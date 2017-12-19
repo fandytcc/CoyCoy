@@ -1,6 +1,5 @@
 FactoryBot.define do
   factory :cart do
-    user nil
-    total "9.99"
+    total {Faker::Commerce.price}
   end
 end
