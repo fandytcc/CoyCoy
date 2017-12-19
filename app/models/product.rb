@@ -3,7 +3,7 @@ class Product < ApplicationRecord
   has_many :product_carts, through: :list_items, source: :cart
 
   validates :name, presence: true, length: { maximum: 50 }
-  validates :price, presence: true, length: { maximum: 5 }
+  validates :price, presence: true
   validates :description, length: { maximum: 500 }
   validates :brand, length: { maximum: 50 }
 

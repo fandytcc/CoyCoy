@@ -24,4 +24,10 @@ RSpec.describe Product, type: :model do
       expect(product.errors).to have_key(:price)
     end
   end
+
+  describe 'validations for length of attributes' do
+    it { is_expected.to validate_length_of(:name).is_at_most(50) }
+    it { is_expected.to validate_length_of(:description).is_at_most(500) }
+    it { is_expected.to validate_length_of(:brand).is_at_most(50) }
+  end
 end
