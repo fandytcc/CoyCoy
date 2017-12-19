@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   # our stuff
   has_one :profile
+  has_one :cart
 
   def full_name
     return profile.full_name if profile?
