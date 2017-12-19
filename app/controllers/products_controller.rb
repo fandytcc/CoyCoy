@@ -1,27 +1,24 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show]
+
   def index
     @products = Product.all
   end
 
   def show
-    @products = @product.all
   end
 
   def new
   end
 
   def create
-
   end
 
   def edit
   end
 
   def update
-
   end
-
 
   private
 
