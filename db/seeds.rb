@@ -6,13 +6,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 Product.delete_all
+User.delete_all
 
-prod1 = Product.create!(name: "Luke skywalker doll",
-                        description: "It's aweseme!",
-                        price: 500,
-                        brand: "ILM merc.")
 
-prod2 = Product.create!(name: "Lego train",
-                        description: "Rebuild fast",
-                        price: 1000,
-                        brand: "LEGO inc.")
+
+20.times do
+  Product.create!(name: Faker::Commerce.product_name,
+                  description: Faker::Hipster.paragraph[0..496] << "...",
+                  price: Faker::Commerce.price,
+                  brand: Faker::Company.name)
+end
+
+user = User.create!(email: "test@test.com", password: "123456")
