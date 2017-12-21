@@ -9,7 +9,11 @@
           <p><%= product.description %></p>
         </div>
         <div class="panel-footer">$ <%= product.price %></div>
-        <%= link_to "Add", list_items_path(cart: current_user.cart.id, product: product), method: :post %>
+        <% if user_signed_in? %>
+          <%= link_to "Add", list_items_path(cart: current_user.cart.id, product: product), method: :post %>
+        <% else %>
+          <%= link_to "Add", new_user_session_path %>
+        <% end %>
       </div>
     </div>
   <% end %>
