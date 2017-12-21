@@ -9,6 +9,7 @@
           <p><%= product.description %></p>
         </div>
         <div class="panel-footer">$ <%= product.price %></div>
+        <%= link_to "Add", new_list_item_path(product: product.id) %>
       </div>
     </div>
   <% end %>

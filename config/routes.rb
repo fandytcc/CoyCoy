@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   root to: 'products#index'
   resources :profiles, only: [:new, :edit, :create, :update]
   resources :products
+  resources :list_items
 end

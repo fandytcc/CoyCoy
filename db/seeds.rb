@@ -23,5 +23,11 @@ productList = Product.all
 user = User.create!(email: "test@test.com", password: "123456")
 cart = Cart.create!(user: user)
 
-item1 = ListItem.create!(cart: cart, product: productList[0])
-item2 = ListItem.create!(cart: cart, product: productList[1])
+# item1 = ListItem.create!(cart: cart, product: productList[0])
+# item2 = ListItem.create!(cart: cart, product: productList[1])
+# item1 = ListItem.create!(cart: cart, product: productList[2])
+# item2 = ListItem.create!(cart: cart, product: productList[3])
+# item1 = ListItem.create!(cart: cart, product: productList[4])
+# item2 = ListItem.create!(cart: cart, product: productList[5])
+# item1 = ListItem.create!(cart: cart, product: productList[6])
+# item2 = ListItem.create!(cart: cart, product: productList[7])
