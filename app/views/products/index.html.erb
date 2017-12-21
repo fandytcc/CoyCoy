@@ -1,0 +1,15 @@
+<div class="row">
+  <% @products.each do |product| %>
+    <div class="col-md-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="panel-title"><%= product.name %></div>
+        </div>
+        <div class="panel-body">
+          <p><%= product.description %></p>
+        </div>
+        <div class="panel-footer">$ <%= product.price %></div>
+      </div>
+    </div>
+  <% end %>
+</div>
