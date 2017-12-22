@@ -1,0 +1,7 @@
+<ul>
+  <% @carted_products.each do |prod| %>
+  <li><%= prod.name + " - " + prod.currency + prod.price.to_s %></li>
+  <% end %>
+
+
+</ul>

@@ -50,14 +50,21 @@
         <img src="https://picsum.photos/200/300/?random" alt="random image">
         <div class="caption">
           <h3><%= product.name %></h3>
-          <p> <label> Price:</label> $<%= product.price %> </p>
+          <p> <label> Price:</label> $<%= product.currency + product.price.to_s %> </p>
           <p><%= link_to "VIEW", product, class: "btn btn-primary"%>
-          <%= link_to "+ ADD TO CART", product, class: "btn btn-info"%></p>
+          <% if user_signed_in? %>
+            <%= link_to "+ ADD TO CART", list_items_path(cart: current_user.cart.id, product: product), method: :post, class: "btn btn-info" %>
+          <% else %>
+            <%= link_to "+ ADD TO CART", new_user_session_path, class: "btn btn-info" %>
+          <% end %>
+          </p>
         </div>
+
       </div>
     </div>
   <% end %>
 </div>
+
 
 <!-- pagination buttons -->
 <nav aria-label="Page navigation">
@@ -79,3 +86,4 @@
     </li>
   </ul>
 </nav>
+

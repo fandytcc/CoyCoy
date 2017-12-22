@@ -7,6 +7,9 @@ class Product < ApplicationRecord
   validates :description, length: { maximum: 500 }
   validates :brand, length: { maximum: 50 }
 
+  def currency
+    "€"
+  end
 
   def self.order_by_price
     order :price
