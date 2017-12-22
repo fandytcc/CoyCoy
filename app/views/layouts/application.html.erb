@@ -6,14 +6,29 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <link href="https://png.icons8.com/color/24/cheburashka.png" rel="shortcut icon" type="image/png">
   </head>
 
   <body>
     <%= render 'shared/navbar' %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+
     <div class="container">
+      <%if notice != nil %>
+        <p class="alert alert-info"><%= notice %></p>
+      <%end%>
+      <%if alert != nil %>
+        <p class="alert alert-danger"><%= alert %></p>
+      <%end%>
       <%= yield %>
     </div>
+
+    <footer>
+      <p>&copy; 2018 CoyCoy</p>
+      <a href="https://icons8.com">Icon pack by Icons8</a>
+    </footer>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/assets/js/bootstrap.min.js"></script>
   </body>
 </html>
