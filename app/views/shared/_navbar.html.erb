@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -7,15 +7,22 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%= link_to "Hoi Hoi! Welcome to CoyCoy", root_path, class: 'navbar-brand' %>
+
+      <%= link_to "Hoi Hoi! Welcome to CoyCoy", root_path, class: "navbar-brand" %>
+      <a href="#"><img src="https://png.icons8.com/color/48/cheburashka.png" title="Cheburashka" width="48" height="48"></a>
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Show cart", carts_path %></li>
+
+        <li><%= link_to carts_path do %>        
+          <a href="#"><img src="https://png.icons8.com/color/24/shopping-cart.png" title="Shopping Cart" width="24" height="24"></a>
+        <% end %></li>
+
         <% if !user_signed_in? %>
           <li><%= link_to "Log In", new_user_session_path %></li>
           <li><%= link_to "Sign Up", new_user_registration_path %></li>
+
         <% else %>
           <li class="dropdown">
             <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= current_user.profile? ? current_user.full_name : current_user.email  %> <span class="caret"></span></a>
