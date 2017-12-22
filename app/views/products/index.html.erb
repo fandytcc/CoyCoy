@@ -8,11 +8,11 @@
         <div class="panel-body">
           <p><%= product.description %></p>
         </div>
-        <div class="panel-footer">$ <%= product.price %></div>
+        <div class="panel-footer"> <%=product.currency + product.price.to_s %></div>
         <% if user_signed_in? %>
-          <%= link_to "Add", list_items_path(cart: current_user.cart.id, product: product), method: :post %>
+          <%= link_to "Add to cart", list_items_path(cart: current_user.cart.id, product: product), method: :post %>
         <% else %>
-          <%= link_to "Add", new_user_session_path %>
+          <%= link_to "Add o cart", new_user_session_path %>
         <% end %>
       </div>
     </div>
