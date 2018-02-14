@@ -47,6 +47,7 @@ These are the steps our team followed when working on this app:
 User model was created by using [Devise](https://github.com/RailsApps/rails-devise).
 
 ## Running Locally
+* Note: Our team worked only in 1 week in class. The functionality of saving products in the Cart page is not finished yet.
 Make sure you have [Ruby](https://www.ruby-lang.org/en/) and [Bundler](http://bundler.io/) installed.
 
 ```bash
