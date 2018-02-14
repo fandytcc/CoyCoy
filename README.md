@@ -13,8 +13,8 @@ These are the steps our team followed when working on this app:
 4. Generate the App & Models
 5. Create initial seed data
 6. Create controllers & views for products overview, show and cart pages
-7. Style the app with Bootstrap and a bit of jQuery
-8. Write model tests using Rspec, FactoryGirl & Faker
+7. Style the app with [Bootstrap](https://getbootstrap.com/) and a bit of [jQuery](https://jquery.com/)
+8. Write model tests using [Rspec](https://github.com/rspec/rspec), [FactoryGirl](https://github.com/kenoir/factory_girl_rails) & [Faker](https://github.com/stympy/faker)
 
 ## Model/ Database Structure
 | Product    | Type   | Description   |
