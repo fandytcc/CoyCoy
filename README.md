@@ -1,24 +1,58 @@
-# README
+# CoyCoy e-commerce webshop
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Sample rails app to learn how to work in team with [SCRUM](https://www.scrum.org/), design models and store user browsing history in sessions instead of cookies, and design models and database structure.
 
-Things you may want to cover:
+<img width="500" alt="screen shot 2018-02-14 at 15 56 08" src="https://user-images.githubusercontent.com/32798242/36210868-e04c3328-119f-11e8-8e27-fbdb74f6bca7.png">
+<img width="500" alt="screen shot 2018-02-14 at 15 56 33" src="https://user-images.githubusercontent.com/32798242/36210871-e20c4d6a-119f-11e8-89f6-3592dc6a219b.png">
 
-* Ruby version
+## Steps
+These are the steps our team followed when working on this app:
+1. Set up a Github project board to keep track of the development progress
+2. Draw wireframes, sketch out how users navigate
+3. Plan data models, database structure by understanding the impacts of user interaction
+4. Generate the App & Models
+5. Create initial seed data
+6. Create controllers & views for products overview, show and cart pages
+7. Style the app with Bootstrap and a bit of jQuery
+8. Write model tests using Rspec, FactoryGirl & Faker
 
-* System dependencies
+## Model/ Database Structure
+| Product    | Type   | Description   |
+|------------|--------|---------------|
+| name       | string | Product name  |
+| price      | decimal| Product price |
+| description| text   | Description   |
+| brand      | string | Brand name    |
 
-* Configuration
+| List_item  | Type   | Description    |
+|------------|--------|----------------|
+| quantity   | integer| Order quantity |
+| purchased  | boolean| Purchase status|
+| total_price| decimal| Total price    |
+| cart_id    | bigint | references     |
+| product_id | bigint | references     |
+| total_price| decimal| Total price    |
 
-* Database creation
+| Cart      | Type   | Description   |
+|-----------|--------|---------------|
+| image     | string | Artist's photo|
+| artist_id | bigint | reference     |
 
-* Database initialization
+| Profile   | Type   | Description   |
+|-----------|--------|---------------|
+| first_name| string | First name    |
+| last_name | string | Last name     |
+| user_id   | bigint | references    |
 
-* How to run the test suite
+User model was created by using [Devise](https://github.com/RailsApps/rails-devise).
 
-* Services (job queues, cache servers, search engines, etc.)
+## Running Locally
+Make sure you have [Ruby](https://www.ruby-lang.org/en/) and [Bundler](http://bundler.io/) installed.
 
-* Deployment instructions
-
-* ...
+```bash
+git clone git@github.com:fandytcc/CoyCoy.git
+cd CoyCoy
+bundle install
+rails db:create db:migrate db:seed
+rails server
+```
